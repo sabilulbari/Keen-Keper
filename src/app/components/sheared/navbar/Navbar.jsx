@@ -69,7 +69,6 @@ const navLinks = [
   },
 ];
 
-
 const NavBar = () => {
   return (
     <div className="bg-base-100 shadow-sm ">

@@ -1,13 +1,14 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React, { use } from 'react';
 
 const Card = ({ user }) => {
 
-    const { name, picture, days_since_contact, tags, status } = user;
+    const { name, picture, days_since_contact, tags, status, id } = user;
   return (
-    <div className='flex flex-col justify-center items-center bg-white border border-gray-100 p-6 rounded-xl space-y-2'>
-      <Image className='rounded-full' src={picture} alt="user Picture" width={50} height={50}></Image>
-      <h2 className='text-[20px] font-semibold'>{name}</h2>
+    <Link href={`/userDetails/${id}`} className="flex flex-col justify-center items-center bg-white border border-gray-100 p-6 rounded-xl space-y-2">
+      <Image className="rounded-full" src={picture} alt="user Picture" width={50} height={50}></Image>
+      <h2 className="text-[20px] font-semibold">{name}</h2>
       <p>{days_since_contact}d ago</p>
       <ul>
         {tags.map((tag, index) => (
@@ -17,7 +18,7 @@ const Card = ({ user }) => {
         ))}
       </ul>
       <div className="badge badge-secondary rounded-full p-4">{status}</div>
-    </div>
+    </Link>
   );
 };
 
