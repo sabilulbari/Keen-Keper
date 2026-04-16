@@ -1,28 +1,25 @@
-import React from 'react';
+import React from "react";
 
 const Summary = () => {
-    return (
-      <div className="mt-10 w-[80%] mx-auto">
-        <div className="grid grid-cols-4 gap-2 ">
-          <div className="rounded-2xl border border-gray-100 text-center space-y-2 p-8 bg-white">
-            <h2 className="text-[32px] font-semibold">10</h2>
-            <p>Total Friends</p>
+  const stats = [
+    { value: 10, label: "Total Friends" },
+    { value: 3, label: "On Track" },
+    { value: 6, label: "Need Attention" },
+    { value: 12, label: "Interactions This Month" },
+  ];
+
+  return (
+    <div className="mt-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {stats.map((item, index) => (
+          <div key={index} className="rounded-2xl border border-gray-100 text-center space-y-2 p-6 sm:p-8 bg-white shadow-sm hover:shadow-md transition-all duration-300">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-[#244D3F]">{item.value}</h2>
+            <p className="text-sm sm:text-base text-gray-500">{item.label}</p>
           </div>
-          <div className="rounded-2xl border border-gray-100 text-center space-y-2 p-8 bg-white">
-            <h2 className="text-[32px] font-semibold">3</h2>
-            <p>On Track</p>
-          </div>
-          <div className="rounded-2xl border border-gray-100 text-center space-y-2 p-8 bg-white">
-            <h2 className="text-[32px] font-semibold">6</h2>
-            <p>Need Attention</p>
-          </div>
-          <div className="rounded-2xl border border-gray-100 text-center space-y-2 p-8 bg-white">
-            <h2 className="text-[32px] font-semibold">12</h2>
-            <p>Interactions This Month</p>
-          </div>
-        </div>
+        ))}
       </div>
-    );
+    </div>
+  );
 };
 
 export default Summary;
