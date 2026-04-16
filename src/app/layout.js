@@ -22,8 +22,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="light" className={`${geistSans.className}`}>
       <body className="bg-[#F8FAFC] ">
-        <NavBar></NavBar>
-        <UserProvider>{children}</UserProvider>
+        <UserProvider>
+          <NavBar></NavBar>
+          {children}
+        </UserProvider>
       </body>
     </html>
   );
