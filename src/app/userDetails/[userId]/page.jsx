@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { BiPhoneCall } from "react-icons/bi";
+import { FaHistory } from "react-icons/fa";
 import { LuVideo } from "react-icons/lu";
 import { MdOutlineTextsms } from "react-icons/md";
 import { PiArchiveBold } from "react-icons/pi";
@@ -156,7 +157,7 @@ const userData = [
 const UserDetails = async ({ params }) => {
   const { userId } = await params;
   const user = userData.find((item) => item.id === parseInt(userId));
-    const { name, picture, days_since_contact, tags, status, id, bio, email, goal, next_due_date } = user;
+  const { name, picture, days_since_contact, tags, status, id, bio, email, goal, next_due_date } = user;
 
   console.log(user);
 
@@ -242,9 +243,48 @@ const UserDetails = async ({ params }) => {
             </div>
           </div>
         </div>
-        <div className="bg-white ">
-            <h2>Recent Interactions</h2>
+        <div className="bg-white p-8 mt-8 shadow-md">
+          <div className="flex justify-between ">
+            <h2 className="font-medium text-[20px] text-[#244D3F]">Recent Interactions</h2>
+            <button className="btn font-medium text-[20px] text-[#244D3F]">
+              <FaHistory />
+              Full History
+            </button>
+          </div>
+          <div className="mt-4 ">
+            <div className="flex justify-between p-4 items-center border-b border-gray-200">
+              <div className="flex gap-3 items-center">
+                <MdOutlineTextsms className="text-[40px]"/>
+                <div>
+                  <h3 className="font-medium text-[20px] text-[#3c4756]">Text</h3>
+                  <p className="font-medium text-[16px] text-[#64748B]">Ask for carer advice</p>
+                </div>
+              </div>
+              <div className="font-medium text-[16px] text-[#64748B]">Jan 28,2026</div>
+            </div>
 
+            <div className="flex justify-between p-4 items-center border-b border-gray-200">
+              <div className="flex gap-3 items-center">
+                <MdOutlineTextsms className="text-[40px]"/>
+                <div>
+                  <h3 className="font-medium text-[20px] text-[#3c4756]">Text</h3>
+                  <p className="font-medium text-[16px] text-[#64748B]">Ask for carer advice</p>
+                </div>
+              </div>
+              <div className="font-medium text-[16px] text-[#64748B]">Jan 28,2026</div>
+            </div>
+
+            <div className="flex justify-between p-4 items-center border-b border-gray-200">
+              <div className="flex gap-3 items-center">
+                <MdOutlineTextsms className="text-[40px]"/>
+                <div>
+                  <h3 className="font-medium text-[20px] text-[#3c4756]">Text</h3>
+                  <p className="font-medium text-[16px] text-[#64748B]">Ask for carer advice</p>
+                </div>
+              </div>
+              <div className="font-medium text-[16px] text-[#64748B]">Jan 28,2026</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
