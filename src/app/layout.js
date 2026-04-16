@@ -2,6 +2,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavBar from "./components/sheared/navbar/Navbar";
 import UserProvider from "./context/UserContext";
+import Provider from "./lib/Provider";
+import Footer from "./components/sheared/footer/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,10 +24,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="light" className={`${geistSans.className}`}>
       <body className="bg-[#F8FAFC] ">
-        <UserProvider>
+        <Provider>
           <NavBar></NavBar>
           {children}
-        </UserProvider>
+          <Footer/>
+        </Provider>
       </body>
     </html>
   );
