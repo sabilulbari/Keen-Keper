@@ -1,3 +1,4 @@
+import CallAndTextButton from "@/app/components/sheared/UserCallTextButton/CallAndTextButton";
 import Image from "next/image";
 import React from "react";
 import { BiPhoneCall } from "react-icons/bi";
@@ -159,7 +160,6 @@ const UserDetails = async ({ params }) => {
   const user = userData.find((item) => item.id === parseInt(userId));
   const { name, picture, days_since_contact, tags, status, id, bio, email, goal, next_due_date } = user;
 
-  console.log(user);
 
   return (
     <div className="py-20 grid grid-cols-3 gap-4 w-[80%] mx-auto ">
@@ -220,26 +220,7 @@ const UserDetails = async ({ params }) => {
           <div className=" p-8  bg-white rounded-md mt-8 shadow-sm">
             <h1 className="font-medium text-[20px] text-[#244D3F] pb-4">Quick Check-In</h1>
             <div>
-              <div className="grid grid-cols-3 gap-8">
-                <div className=" btn flex-col py-15 text-[#64748B] rounded-md">
-                  <div>
-                    <BiPhoneCall className="w-8 h-8 " />
-                  </div>
-                  <p className="text-[18px]">Call</p>
-                </div>
-                <div className=" btn flex-col py-15 text-[#64748B] rounded-md">
-                  <div>
-                    <MdOutlineTextsms className="w-8 h-8 " />
-                  </div>
-                  <p className="text-[18px]">Call</p>
-                </div>
-                <div className=" btn flex-col py-15 text-[#64748B] rounded-md">
-                  <div>
-                    <LuVideo className="w-8 h-8 " />
-                  </div>
-                  <p className="text-[18px]">Call</p>
-                </div>
-              </div>
+                <CallAndTextButton user={user} />
             </div>
           </div>
         </div>
@@ -254,7 +235,7 @@ const UserDetails = async ({ params }) => {
           <div className="mt-4 ">
             <div className="flex justify-between p-4 items-center border-b border-gray-200">
               <div className="flex gap-3 items-center">
-                <MdOutlineTextsms className="text-[40px]"/>
+                <MdOutlineTextsms className="text-[40px]" />
                 <div>
                   <h3 className="font-medium text-[20px] text-[#3c4756]">Text</h3>
                   <p className="font-medium text-[16px] text-[#64748B]">Ask for carer advice</p>
@@ -265,7 +246,7 @@ const UserDetails = async ({ params }) => {
 
             <div className="flex justify-between p-4 items-center border-b border-gray-200">
               <div className="flex gap-3 items-center">
-                <MdOutlineTextsms className="text-[40px]"/>
+                <MdOutlineTextsms className="text-[40px]" />
                 <div>
                   <h3 className="font-medium text-[20px] text-[#3c4756]">Text</h3>
                   <p className="font-medium text-[16px] text-[#64748B]">Ask for carer advice</p>
@@ -276,7 +257,7 @@ const UserDetails = async ({ params }) => {
 
             <div className="flex justify-between p-4 items-center border-b border-gray-200">
               <div className="flex gap-3 items-center">
-                <MdOutlineTextsms className="text-[40px]"/>
+                <MdOutlineTextsms className="text-[40px]" />
                 <div>
                   <h3 className="font-medium text-[20px] text-[#3c4756]">Text</h3>
                   <p className="font-medium text-[16px] text-[#64748B]">Ask for carer advice</p>
