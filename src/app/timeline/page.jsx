@@ -23,8 +23,8 @@ const RecentInterection = () => {
         <option value="video">Video</option>
       </select>
 
-      {filteredData.map((item) => (
-        <div key={item.id} className=" w-full p-4 ">
+      {filteredData.map((item, ind) => (
+        <div key={ind} className=" w-full p-4 ">
           <div className="flex gap-3 items-center bg-white rounded-lg p-4 border border-green-100">
             {item.type === "call" && <BiPhoneCall className="text-3xl" />}
             {item.type === "text" && <MdOutlineTextsms className="text-3xl" />}
