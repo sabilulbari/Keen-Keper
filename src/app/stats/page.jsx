@@ -19,23 +19,27 @@ export default function InteractionChart() {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center mt-10">
-      <h2 className="text-3xl font-bold mb-4">Interaction Overview</h2>
+    <div className=" w-[80%] mx-auto m-4">
+      <h2 className="text-5xl font-bold mb-4">Friendship Analytics</h2>
+      <div className="mt-10 bg-white rounded-sm p-5 shadow-sm">
+        <p className="text-[#244D3F] font-medium text-xl">By Interaction Type</p>
+        <div className="flex flex-col items-center justify-center ">
+          <PieChart width={250} height={250}>
+            <Pie data={data} cx="50%" cy="50%" innerRadius={70} outerRadius={100} paddingAngle={6} dataKey="value">
+              {data.map((entry, index) => (
+                <Cell key={index} fill={COLORS[index]} />
+              ))}
+            </Pie>
 
-      <PieChart width={250} height={250}>
-        <Pie data={data} cx="50%" cy="50%" innerRadius={70} outerRadius={100} paddingAngle={6} dataKey="value">
-          {data.map((entry, index) => (
-            <Cell key={index} fill={COLORS[index]} />
-          ))}
-        </Pie>
+            <Tooltip />
+          </PieChart>
 
-        <Tooltip />
-      </PieChart>
-
-      <div className="flex gap-4 mt-4">
-        <p>📞 Call: {callCount}</p>
-        <p>💬 Text: {textCount}</p>
-        <p>🎥 Video: {videoCount}</p>
+          <div className="flex gap-4 mt-4">
+            <p>📞 Call: {callCount}</p>
+            <p>💬 Text: {textCount}</p>
+            <p>🎥 Video: {videoCount}</p>
+          </div>
+        </div>
       </div>
     </div>
   );
