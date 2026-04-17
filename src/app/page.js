@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Banner from "./homepage/banner/page";
 import Summary from "./homepage/userCard/summury/Summary";
 import Cards from "./homepage/userCard/cards/Cards";

@@ -1,5 +1,7 @@
 import React from "react";
 
+
+  
 const Summary = () => {
   const stats = [
     { value: 10, label: "Total Friends" },
