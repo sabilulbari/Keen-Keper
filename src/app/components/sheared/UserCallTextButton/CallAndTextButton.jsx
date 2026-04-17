@@ -10,7 +10,7 @@ const CallAndTextButton = ({ user }) => {
   const userData = user;
 
   const storeUser = useContext(UserContext);
-const {handleCall} = storeUser
+const {handleCall} = storeUser;
   return (
       <div className="grid grid-cols-3 gap-8">
         <div className=" btn flex-col py-15 text-[#64748B] rounded-md " onClick={() => handleCall(userData)}>

@@ -4,6 +4,7 @@ import NavBar from "./components/sheared/navbar/Navbar";
 import UserProvider from "./context/UserContext";
 import Provider from "./lib/Provider";
 import Footer from "./components/sheared/footer/Footer";
+import { ToastContainer } from "react-toastify";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +28,8 @@ export default function RootLayout({ children }) {
         <Provider>
           <NavBar></NavBar>
           {children}
-          <Footer/>
+          <Footer />
+          <ToastContainer />
         </Provider>
       </body>
     </html>

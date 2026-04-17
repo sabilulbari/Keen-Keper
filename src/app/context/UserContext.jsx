@@ -1,14 +1,26 @@
 'use client'
 import React, { createContext, useState } from 'react';
+import { toast } from 'react-toastify';
 
 export const UserContext = createContext();
 
 const UserProvider = ({children}) => {
 
     const [call, setCall] = useState([])
+    const [text, setText ]= useState([])
+    const [video, setVideo] = useState([])
+      console.log(call, "get call");
+
+    
 
     const handleCall = (userData) => {
-      console.log("Call button click and get data", userData);
+
+      const isExist = call.find((item)=> item.id === userData.id);
+
+      if(!isExist){
+        toast.success(`Call with ${userData.name} `);
+        setCall([...call,userData]);
+      }
     };
 
     const data = {
