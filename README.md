@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 📌 Relationship Tracker Dashboard
 
-## Getting Started
+A modern, smart relationship management dashboard that helps users track interactions with friends, colleagues, and contacts. It visualizes communication history (call, text, video), highlights relationship status, and ensures you never lose touch with important people in your network.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ⚙️ Tech Stack
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* Next.js (App Router)
+* React.js
+* Tailwind CSS
+* React Icons
+* Context API
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Features
 
-## Learn More
+### 📊 1. Interaction Timeline Tracking
 
-To learn more about Next.js, take a look at the following resources:
+Track and filter communication history by **Call, Text, and Video** in a clean timeline UI.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 👤 2. Smart Relationship Dashboard
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Each contact has a detailed profile including:
 
-## Deploy on Vercel
+* Days since last contact
+* Relationship status
+* Tags
+* Bio
+* Communication goal tracking
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 📈 3. Insightful Analytics View
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Displays structured relationship insights such as:
+
+* Contact frequency
+* Next due date
+* Goal tracking
+
+---
+
+## 📁 Project Structure (Suggested)
+
+app/
+├── components/
+├── context/
+├── userDetails/
+├── page.jsx
+
+---
+
+## 💡 Core Concept
+
+This project is built around the idea of **maintaining meaningful human connections through data-driven interaction tracking**.
+
+Old-school relationship care + modern dashboard engineering = ❤️
+
+---
+
+## 🧠 Key Learnings
+
+* Context API state management
+* Dynamic filtering in React
+* Component-based architecture
+* Responsive UI design with Tailwind CSS
+* Real-world dashboard structuring
+
+---
+
+## 🚀 Future Improvements
+
+* Authentication system
+* Database integration (MongoDB / Firebase)
+* Real-time notifications
+* Drag & drop timeline
+* Dark mode support
+
+---
+
+## 👨‍💻 Developer Notes
+
+Built with a focus on scalability, clean UI structure, and real-world usability. Designed to mimic production-grade SaaS dashboards.
+
+---
+
+💼 *Built for learning, portfolio growth, and real-world frontend engineering practice.*
