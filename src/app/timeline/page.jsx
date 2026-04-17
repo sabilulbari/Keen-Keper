@@ -8,15 +8,20 @@ import { MdOutlineTextsms } from "react-icons/md";
 const RecentInterection = () => {
   const { buttonEvent } = useContext(UserContext);
 
-  // ✅ Step 2 (needed before 3)
   const [filter, setFilter] = useState("all");
 
-  // ✅ Step 3
-  const filteredData = filter === "all" ? buttonEvent : buttonEvent.filter((item) => item.type === filter);
+  const filteredData = filter === "all" ? buttonEvent : buttonEvent.filter((item) => item.type.toLowerCase() === filter.toLowerCase());
 
   return (
     <div className=" w-[80%] mx-auto mt-10">
       <h2 className="font-bold text-5xl">Timeline</h2>
+
+      <select value={filter} onChange={(e) => setFilter(e.target.value)} className="select select-success mt-4">
+        <option value="all">All</option>
+        <option value="call">Call</option>
+        <option value="text">Text</option>
+        <option value="video">Video</option>
+      </select>
 
       {filteredData.map((item) => (
         <div key={item.id} className=" w-full p-4 ">
@@ -27,11 +32,7 @@ const RecentInterection = () => {
 
             <div className="space-y-1 pl-4">
               <h3 className="font-semibold capitalize ">
-                {item.type}{" "}
-                <span className="font-normal text-gray-600 text-[16px]">
-                  <span> with </span>
-                  {item.name}
-                </span>
+                {item.type} <span className="font-normal text-gray-600 text-[16px]">with {item.name}</span>
               </h3>
               <p className="text-gray-500">
                 {new Date(item.time).toLocaleDateString("en-US", {

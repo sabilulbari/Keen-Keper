@@ -6,8 +6,7 @@ export const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
   const [buttonEvent, setbuttonEvent] = useState([]);
-  const [text, setText] = useState([]);
-  const [video, setVideo] = useState([]);
+
 
   const handleCall = (callData) => {
     toast.success(`Call with ${callData.name}`);

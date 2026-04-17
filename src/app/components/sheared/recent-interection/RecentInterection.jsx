@@ -16,10 +16,8 @@ const RecentInterection = () => {
 
   return (
     <div>
-     
-
-      {filteredData.map((item) => (
-        <div key={item.id} className="flex justify-between p-4 border-b">
+      {filteredData.map((item, idx) => (
+        <div key={idx} className="flex justify-between p-4 border-b">
           <div className="flex gap-3 items-center">
             {item.type === "call" && <BiPhoneCall className="text-2xl" />}
             {item.type === "text" && <MdOutlineTextsms className="text-2xl" />}
