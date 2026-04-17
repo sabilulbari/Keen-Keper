@@ -23,13 +23,13 @@ const {handleCall, handleText, handleVideo} = storeUser;
           <div>
             <MdOutlineTextsms className="w-8 h-8 " />
           </div>
-          <p className="text-[18px]">Call</p>
+          <p className="text-[18px]">Text</p>
         </div>
         <div className=" btn flex-col py-15 text-[#64748B] rounded-md" onClick={() => handleVideo(userData)}>
           <div>
             <LuVideo className="w-8 h-8 " />
           </div>
-          <p className="text-[18px]">Call</p>
+          <p className="text-[18px]">Video</p>
         </div>
       </div>
   );

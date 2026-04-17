@@ -16,15 +16,8 @@ const RecentInterection = () => {
 
   return (
     <div>
-      {/* ✅ Step 4 (filter buttons) */}
-      {/* <div className="flex gap-4 p-4">
-        <button onClick={() => setFilter("all")}>All</button>
-        <button onClick={() => setFilter("call")}>Call</button>
-        <button onClick={() => setFilter("text")}>Text</button>
-        <button onClick={() => setFilter("video")}>Video</button>
-      </div> */}
+     
 
-      {/* ✅ Step 5 (render data) */}
       {filteredData.map((item) => (
         <div key={item.id} className="flex justify-between p-4 border-b">
           <div className="flex gap-3 items-center">

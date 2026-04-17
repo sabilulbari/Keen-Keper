@@ -21,7 +21,7 @@ const UserProvider = ({ children }) => {
 
   const handleVideo = (videoData) => {
     toast.success(`Video Call with ${videoData.name}`);
-    setbuttonEvent([...buttonEvent, { ...videoData, type: "video", time: new Date().toLocaleString() }]);
+    setbuttonEvent([...buttonEvent, { ...videoData, type: "video", time: new Date().toLocaleString(), id: Date.now() }]);
   };
 
   const data = {
