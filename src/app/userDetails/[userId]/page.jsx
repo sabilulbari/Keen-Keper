@@ -2,12 +2,13 @@ import RecentInterection from "@/app/components/sheared/recent-interection/Recen
 import CallAndTextButton from "@/app/components/sheared/UserCallTextButton/CallAndTextButton";
 import Image from "next/image";
 import React from "react";
-import { BiPhoneCall } from "react-icons/bi";
 import { FaHistory } from "react-icons/fa";
-import { LuVideo } from "react-icons/lu";
-import { MdOutlineTextsms } from "react-icons/md";
 import { PiArchiveBold } from "react-icons/pi";
 import { RiDeleteBinLine, RiNotificationSnoozeLine } from "react-icons/ri";
+
+export const metadata = {
+  title: "KeenKeeper || User Details",
+};
 
 const userData = [
   {
@@ -156,10 +157,12 @@ const userData = [
   },
 ];
 
+
 const UserDetails = async ({ params }) => {
   const { userId } = await params;
   const user = userData.find((item) => item.id === parseInt(userId));
   const { name, picture, days_since_contact, tags, status, id, bio, email, goal, next_due_date } = user;
+  
 
 
   return (

@@ -3,6 +3,8 @@ import { PieChart, Pie, Cell, Tooltip } from "recharts";
 import { useContext } from "react";
 import { UserContext } from "@/app/context/UserContext";
 
+
+
 const COLORS = ["#1f4d3d", "#7c3aed", "#2f855a"];
 
 export default function InteractionChart() {
