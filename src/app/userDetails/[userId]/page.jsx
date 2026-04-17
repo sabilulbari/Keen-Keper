@@ -1,6 +1,7 @@
 import RecentInterection from "@/app/components/sheared/recent-interection/RecentInterection";
 import CallAndTextButton from "@/app/components/sheared/UserCallTextButton/CallAndTextButton";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { FaHistory } from "react-icons/fa";
 import { PiArchiveBold } from "react-icons/pi";
@@ -9,6 +10,8 @@ import { RiDeleteBinLine, RiNotificationSnoozeLine } from "react-icons/ri";
 export const metadata = {
   title: "KeenKeeper || User Details",
 };
+
+
 
 const userData = [
   {
@@ -162,6 +165,15 @@ const UserDetails = async ({ params }) => {
   const { userId } = await params;
   const user = userData.find((item) => item.id === parseInt(userId));
   const { name, picture, days_since_contact, tags, status, id, bio, email, goal, next_due_date } = user;
+
+  const priorityColor =
+    status === "Overdue"
+      ? "text-white bg-[#EF4444] border-none"
+      : status === "Almost due"
+        ? "text-white bg-[#EFAD44] border-none"
+        : status === "On-track"
+          ? "text-white bg-[#244D3F] border-none"
+          : "";
   
 
 
@@ -176,11 +188,11 @@ const UserDetails = async ({ params }) => {
 
           <p className="text-sm md:text-base">{days_since_contact}d ago</p>
 
-          <div className="badge badge-secondary rounded-full p-3 md:p-4">{status}</div>
+          <div className={`${priorityColor}badge badge-secondary rounded-full p-2`}>{status}</div>
 
           <ul className="flex flex-wrap justify-center gap-2">
             {tags.map((tag, index) => (
-              <li key={index} className="badge bg-green-300 text-gray-600 rounded-full px-3 py-2 text-xs md:text-sm">
+              <li key={index} className="badge md:mt-2 bg-[#CBFADB] text-[12px] font-medium text-green-700 mr-2 rounded-full p-2">
                 {tag}
               </li>
             ))}
@@ -256,10 +268,10 @@ const UserDetails = async ({ params }) => {
           <div className="flex flex-col sm:flex-row sm:justify-between gap-3">
             <h2 className="font-medium text-lg md:text-xl text-[#244D3F]">Recent Interactions</h2>
 
-            <button className="btn btn-sm md:btn-md font-medium text-[#244D3F]">
+            <Link href={"/timeline"} className="btn btn-sm md:btn-md font-medium text-[#244D3F]">
               <FaHistory />
               Full History
-            </button>
+            </Link>
           </div>
 
           <RecentInterection />
