@@ -1,3 +1,4 @@
+import RecentInterection from "@/app/components/sheared/recent-interection/RecentInterection";
 import CallAndTextButton from "@/app/components/sheared/UserCallTextButton/CallAndTextButton";
 import Image from "next/image";
 import React from "react";
@@ -233,38 +234,8 @@ const UserDetails = async ({ params }) => {
             </button>
           </div>
           <div className="mt-4 ">
-            <div className="flex justify-between p-4 items-center border-b border-gray-200">
-              <div className="flex gap-3 items-center">
-                <MdOutlineTextsms className="text-[40px]" />
-                <div>
-                  <h3 className="font-medium text-[20px] text-[#3c4756]">Text</h3>
-                  <p className="font-medium text-[16px] text-[#64748B]">Ask for carer advice</p>
-                </div>
-              </div>
-              <div className="font-medium text-[16px] text-[#64748B]">Jan 28,2026</div>
-            </div>
-
-            <div className="flex justify-between p-4 items-center border-b border-gray-200">
-              <div className="flex gap-3 items-center">
-                <MdOutlineTextsms className="text-[40px]" />
-                <div>
-                  <h3 className="font-medium text-[20px] text-[#3c4756]">Text</h3>
-                  <p className="font-medium text-[16px] text-[#64748B]">Ask for carer advice</p>
-                </div>
-              </div>
-              <div className="font-medium text-[16px] text-[#64748B]">Jan 28,2026</div>
-            </div>
-
-            <div className="flex justify-between p-4 items-center border-b border-gray-200">
-              <div className="flex gap-3 items-center">
-                <MdOutlineTextsms className="text-[40px]" />
-                <div>
-                  <h3 className="font-medium text-[20px] text-[#3c4756]">Text</h3>
-                  <p className="font-medium text-[16px] text-[#64748B]">Ask for carer advice</p>
-                </div>
-              </div>
-              <div className="font-medium text-[16px] text-[#64748B]">Jan 28,2026</div>
-            </div>
+            <RecentInterection/>
+            
           </div>
         </div>
       </div>
