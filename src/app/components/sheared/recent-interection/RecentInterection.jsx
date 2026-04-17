@@ -1,27 +1,49 @@
-'use client'
+"use client";
 import { UserContext } from "@/app/context/UserContext";
-import { div } from "framer-motion/client";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
+import { BiPhoneCall } from "react-icons/bi";
+import { LuVideo } from "react-icons/lu";
 import { MdOutlineTextsms } from "react-icons/md";
 
 const RecentInterection = () => {
-    const showHistory = useContext(UserContext);
+  const { buttonEvent } = useContext(UserContext);
 
-    const { buttonEvent } = showHistory;
-     
-    
+  // ✅ Step 2 (needed before 3)
+  const [filter, setFilter] = useState("all");
+
+  // ✅ Step 3
+  const filteredData = filter === "all" ? buttonEvent : buttonEvent.filter((item) => item.type === filter);
+
   return (
     <div>
-      {buttonEvent.map((item) => (
-        <div key={item.id} className="flex justify-between p-4 items-center border-b border-gray-200">
+      {/* ✅ Step 4 (filter buttons) */}
+      {/* <div className="flex gap-4 p-4">
+        <button onClick={() => setFilter("all")}>All</button>
+        <button onClick={() => setFilter("call")}>Call</button>
+        <button onClick={() => setFilter("text")}>Text</button>
+        <button onClick={() => setFilter("video")}>Video</button>
+      </div> */}
+
+      {/* ✅ Step 5 (render data) */}
+      {filteredData.map((item) => (
+        <div key={item.id} className="flex justify-between p-4 border-b">
           <div className="flex gap-3 items-center">
-            <MdOutlineTextsms className="text-[40px]" />
+            {item.type === "call" && <BiPhoneCall className="text-2xl" />}
+            {item.type === "text" && <MdOutlineTextsms className="text-2xl" />}
+            {item.type === "video" && <LuVideo className="text-2xl" />}
+
             <div>
-              <h3 className="font-medium text-[20px] text-[#3c4756]">Text</h3>
-              <p className="font-medium text-[16px] text-[#64748B]">Ask for carer advice</p>
+              <h3 className="font-semibold capitalize ">{item.type}</h3>
+              <p className="text-gray-500">{item.name}</p>
             </div>
           </div>
-          <div className="font-medium text-[16px] text-[#64748B]">Jan 28,2026</div>
+          <div>
+            {new Date(item.time).toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
+          </div>
         </div>
       ))}
     </div>

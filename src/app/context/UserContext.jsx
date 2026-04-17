@@ -10,26 +10,18 @@ const UserProvider = ({ children }) => {
   const [video, setVideo] = useState([]);
 
   const handleCall = (callData) => {
-    toast.success(`Call with ${callData.name} `);
-     setbuttonEvent([...buttonEvent, callData]);
-    
+    toast.success(`Call with ${callData.name}`);
+    setbuttonEvent([...buttonEvent, { ...callData, type: "call", time: new Date().toLocaleString() }]);
   };
-  const handleText = (textData) => {
-    toast.success(`Text with ${textData.name} `);
-     setbuttonEvent([...buttonEvent, textData]);
-    
-  };
-  const handleVideo = (videoData) => {
-    toast.success(`Video Call with ${videoData.name} `);
-     setbuttonEvent([...buttonEvent, videoData]);
-    // const isExist = call.find((item) => item.id === userData.id);
 
-    // if (isExist) {
-    //   toast.error("Alredy called");
-    // } else {
-    //   toast.success(`Call with ${userData.name} `);
-    //   setCall([...call, userData]);
-    // }
+  const handleText = (textData) => {
+    toast.success(`Text with ${textData.name}`);
+    setbuttonEvent([...buttonEvent, { ...textData, type: "text", time: new Date().toLocaleString() }]);
+  };
+
+  const handleVideo = (videoData) => {
+    toast.success(`Video Call with ${videoData.name}`);
+    setbuttonEvent([...buttonEvent, { ...videoData, type: "video", time: new Date().toLocaleString() }]);
   };
 
   const data = {
